@@ -120,8 +120,9 @@ the example below) computed from the center of each genomic interval:
 
 ```{r eval=FALSE}
 # Install Bioconductor packages
-source("http://bioconductor.org/biocLite.R")
-biocLite("BSgenome.Scerevisiae.UCSC.sacCer3")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("BSgenome.Scerevisiae.UCSC.sacCer3")
 
 library(BSgenome.Scerevisiae.UCSC.sacCer3)
 
